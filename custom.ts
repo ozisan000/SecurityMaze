@@ -70,16 +70,17 @@ namespace securityhack {
         }
         for (i = 0; i < Y_MAX + 1; i += 1) {
             for (let j = 0; j < X_MAX + 1; j += 1) {
+                let placePos = world(minPos[0], minPos[1] - i, minPos[2] + j)
                 if (mapData[i][j] == NONE) {
-                    blocks.place(ConvertBlock(NONE), world(minPos[0], minPos[1] - i, minPos[2] + j))
+                    blocks.fill(ConvertBlock(NONE), placePos, placePos, FillOperation.Replace)
                 } else if (mapData[i][j] == WALL) {
-                    blocks.place(ConvertBlock(WALL), world(minPos[0], minPos[1] - i, minPos[2] + j))
+                    blocks.fill(ConvertBlock(WALL), placePos, placePos, FillOperation.Replace)
                 } else if (mapData[i][j] == PLAYER) {
-                    blocks.place(ConvertBlock(PLAYER), world(minPos[0], minPos[1] - i, minPos[2] + j))
+                    blocks.fill(ConvertBlock(PLAYER), placePos, placePos, FillOperation.Replace)
                     playerPos[0] = i
                     playerPos[1] = j
                 } else if (mapData[i][j] == GOAL) {
-                    blocks.place(ConvertBlock(GOAL), world(minPos[0], minPos[1] - i, minPos[2] + j))
+                    blocks.fill(ConvertBlock(GOAL), placePos, placePos, FillOperation.Replace)
                 }
 
             }
@@ -90,16 +91,17 @@ namespace securityhack {
 
         for (let i = 0; i < Y_MAX + 1; i += 1) {
             for (let j = 0; j < X_MAX + 1; j += 1) {
-                if (clearData[i][j] == NONE) {
-                    blocks.place(ConvertBlock(NONE), world(minPos[0], minPos[1] - i, minPos[2] + j))
-                } else if (clearData[i][j] == WALL) {
-                    blocks.place(ConvertBlock(WALL), world(minPos[0], minPos[1] - i, minPos[2] + j))
-                } else if (clearData[i][j] == PLAYER) {
-                    blocks.place(ConvertBlock(PLAYER), world(minPos[0], minPos[1] - i, minPos[2] + j))
-                } else if (clearData[i][j] == GOAL) {
-                    blocks.place(ConvertBlock(GOAL), world(minPos[0], minPos[1] - i, minPos[2] + j))
-                }
 
+                let placePos = world(minPos[0], minPos[1] - i, minPos[2] + j)
+                if (clearData[i][j] == NONE) {
+                    blocks.fill(ConvertBlock(NONE), placePos, placePos, FillOperation.Replace)
+                } else if (clearData[i][j] == WALL) {
+                    blocks.fill(ConvertBlock(WALL), placePos, placePos, FillOperation.Replace)
+                } else if (clearData[i][j] == PLAYER) {
+                    blocks.fill(ConvertBlock(PLAYER), placePos, placePos, FillOperation.Replace)
+                } else if (clearData[i][j] == GOAL) {
+                    blocks.fill(ConvertBlock(GOAL), placePos, placePos, FillOperation.Replace)
+                }
             }
         }
     }
