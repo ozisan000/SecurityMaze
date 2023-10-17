@@ -173,6 +173,7 @@ namespace securityhack {
         let clickPos = world(0, 0, 0)
         let isClick = false
         Init()
+        player.execute("/title @a title Start!")
         loops.runInBackground(function Timer() {
 
             while (IsEnd()) {
