@@ -4,17 +4,10 @@
 * 詳しくはこちらを参照してください：https://minecraft.makecode.com/blocks/custom
 */
 
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
-}
-
 /**
  * Custom blocks
  */
-//% weight=100 color=#0fbc11 icon=""
+//% weight=100 color=#228b22 icon="◫"
 namespace securityhack {
     let minPos = [36, 4, 15]
     let maxPos = [36, 4, 31]
