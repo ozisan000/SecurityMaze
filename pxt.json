@@ -10,7 +10,8 @@
         "README.md",
         "main.blocks",
         "main.ts",
-        "custom.ts"
+        "custom.ts",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
