@@ -43,7 +43,7 @@ namespace securityhack {
     // r
     let putPos = world(-1, -1, 22)
     let isClear = false
-    let time = 100
+    let time = 30
     // 色のIDをブロックのIDに変換する
     function ConvertBlock(bid: number): number {
         if (bid == NONE) {
